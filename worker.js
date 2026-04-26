@@ -983,7 +983,7 @@ async function handleCallbackQuery(query, env, ctx) {
             await tgCall(env, "editMessageText", {
                 chat_id: userId,
                 message_id: query.message.message_id,
-                text: "✅ **验证成功**\n\n您现在可以自由对话了。",
+                text: "🎉 **验证成功**，现在可以对话了。",
                 parse_mode: "Markdown"
             });
 
@@ -1026,7 +1026,7 @@ async function handleCallbackQuery(query, env, ctx) {
                     if (forwardedCount > 0) {
                         await tgCall(env, "sendMessage", {
                             chat_id: userId,
-                            text: `📩 刚才的 ${forwardedCount} 条消息已帮您送达。`
+                            text: `📩 刚才的 ${forwardedCount} 条消息已送达。`
                         });
                     }
                 } catch (e) {
